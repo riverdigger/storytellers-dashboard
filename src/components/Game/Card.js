@@ -2,13 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendar,
   faUser,
-  faWifi,
-  faDungeon,
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import { NewTag } from "./tags/NewTag";
-import { GMNeededTag } from "./tags/GMNeededTag";
-import { AvailabilityTag } from "./tags/AvailabilityTag";
+import { AvailabilityTag, GMNeededTag, NewTag } from "../Tag/Tags";
 
 const Card = ({
   title,

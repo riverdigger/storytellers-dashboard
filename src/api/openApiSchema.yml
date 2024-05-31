@@ -1,0 +1,119 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Games API
+paths:
+  /games:
+    get:
+      summary: Get all games
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/game"
+    post:
+      summary: Create a new game
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/game"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/game"
+  /games/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      summary: Get a game by ID
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/game"
+        "404":
+          description: game not found
+    put:
+      summary: Update a game by ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/game"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/game"
+        "404":
+          description: game not found
+    delete:
+      summary: Delete a game by ID
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: game not found
+components:
+  schemas:
+    game:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+        description:
+          type: string
+        active:
+          type: boolean
+        public:
+          type: boolean
+        system:
+          type: string
+        gm_id:
+          type: integer
+        image_url:
+          type: string
+        max_players:
+          type: integer
+        schedule:
+          type: string
+        timezone:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+          readOnly: true
+        updatedAt:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+        - title
+        - description
+        - active
+        - public
+        - system
+        - gm_id
+        - max_players
+        - schedule

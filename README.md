@@ -4,6 +4,4 @@
 
 In the project directory, you can run:
 
-### `npx prisma db pull`
-
-### `npx prisma generate`
+### `NODE_ENV=development node src/index.js`

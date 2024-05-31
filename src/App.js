@@ -1,8 +1,8 @@
 import "./App.css";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Card } from "./cards/Card";
-import { Navbar } from "./navbar/Navbar";
+import { Card } from "./components/Game/Card";
+import { Navbar } from "./components/Navbar/Navbar";
 
 // Import Swiper styles
 import "swiper/css";
@@ -12,7 +12,7 @@ import "swiper/css/autoplay";
 
 // import required modules
 import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
-import { FilterBar } from "./navbar/FilterBar";
+import { FilterBar } from "./pages/Home/components/FilterBar";
 <script
   src="https://kit.fontawesome.com/8a32c9653e.js"
   crossorigin="anonymous"
