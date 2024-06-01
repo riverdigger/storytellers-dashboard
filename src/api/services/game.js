@@ -1,6 +1,6 @@
-import express from "express";
-import { config } from "../../database/config.js";
-import Database from "../../database/database.js";
+import express from 'express';
+import { config } from '../../database/config.js';
+import Database from '../../database/database.js';
 
 const router = express.Router();
 router.use(express.json());
@@ -11,12 +11,7 @@ console.log(config);
 // Create database object
 const database = new Database(config);
 
-router.get("/", (_, res) => {
-  res.status(200).send("Games API");
-});
-
-// Games
-router.get("/api/games", async (_, res) => {
+router.get('/', async (_, res) => {
   try {
     // Return a list of games
     const games = await database.readAll();
@@ -27,7 +22,7 @@ router.get("/api/games", async (_, res) => {
   }
 });
 
-router.post("/api/game", async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     // Create a game
     const game = req.body;
@@ -39,7 +34,7 @@ router.post("/api/game", async (req, res) => {
   }
 });
 
-router.get("/api/games/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     // Get the game with the specified ID
     const gameId = req.params.id;
@@ -56,7 +51,7 @@ router.get("/api/games/:id", async (req, res) => {
   }
 });
 
-router.put("/api/games/:id", async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     // Update the game with the specified ID
     const gameId = req.params.id;
@@ -76,7 +71,7 @@ router.put("/api/games/:id", async (req, res) => {
   }
 });
 
-router.delete("/api/games/:id", async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     // Delete the game with the specified ID
     const gameId = req.params.id;

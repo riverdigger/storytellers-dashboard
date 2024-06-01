@@ -13,12 +13,25 @@ import "swiper/css/autoplay";
 // import required modules
 import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 import { FilterBar } from "./pages/Home/components/FilterBar";
+import { useEffect, useState } from "react";
 <script
   src="https://kit.fontawesome.com/8a32c9653e.js"
   crossorigin="anonymous"
 ></script>;
 
 function App() {
+  const [backendData, setBackendData] = useState([{}])
+
+  useEffect(() => {
+    fetch("/games"),then(
+      response => response.json()
+    ).then(
+      data => {
+        setBackendData(data)
+      }
+    )
+  }, [])
+
   return (
     <div className="App">
       <Navbar></Navbar>

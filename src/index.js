@@ -3,7 +3,8 @@ import { config } from "./database/config.js";
 import Database from "./database/database.js";
 
 // Import App routes
-import router from "./api/services/router.js";
+import home from "./api/services/home.js";
+import game from "./api/services/game.js";
 import openapi from "./api/openapi.js";
 
 const port = process.env.PORT || 3000;
@@ -40,30 +41,34 @@ if (process.env.NODE_ENV === "development") {
       console.error(`Error creating table: ${err}`);
     });
 
-    database
-    .executeQuery(
-      `CREATE TABLE Request (
-        id int NOT NULL IDENTITY,
-        user_id int,
-        game_id int,
-        timezone datetimeoffset,
-        createdAt datetime,
-      );`
-    )
-    .then(() => {
-      console.log("Table created");
-    })
-    .catch((err) => {
-      // Table may already exist
-      console.error(`Error creating table: ${err}`);
-    });
+    // database
+    // .executeQuery(
+    //   `CREATE TABLE Request (
+    //     id int NOT NULL IDENTITY,
+    //     user_id int,
+    //     game_id int,
+    //     timezone datetimeoffset,
+    //     createdAt datetime,
+    //   );`
+    // )
+    // .then(() => {
+    //   console.log("Table created");
+    // })
+    // .catch((err) => {
+    //   // Table may already exist
+    //   console.error(`Error creating table: ${err}`);
+    // });
 }
 
 // Connect App routes
+app.use(express.static('src'));
+app.use(express.urlencoded({ extended: true }));
+
 app.use("/api-docs", openapi);
-app.use("/games", router);
+app.use("/games", game);
+app.use("/", home);
 app.use("*", (_, res) => {
-  res.redirect("/api-docs");
+  res.redirect("/");
 });
 
 // Start the server

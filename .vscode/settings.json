@@ -21,6 +21,9 @@
   "peacock.remoteColor": "#69FF94",
   "appService.zipIgnorePattern": [
     "./.env*",
-    "node_modules{,/**}"
-  ]
+    "node_modules{,/**}",
+    ".vscode{,/**}"
+  ],
+  "appService.defaultWebAppToDeploy": "/subscriptions/71221874-2243-4fd4-b268-1452567e1725/resourceGroups/storytellers-dashboard-rg/providers/Microsoft.Web/sites/storytellers-dashboard-webapp",
+  "appService.deploySubpath": "."
 }
