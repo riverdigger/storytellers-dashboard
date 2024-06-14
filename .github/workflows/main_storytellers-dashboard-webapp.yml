@@ -3,6 +3,10 @@
 
 name: Build and deploy Node.js app to Azure Web App - storytellers-dashboard-webapp
 
+env:
+  AZURE_WEBAPP_NAME: storytellers-dashboard-webapp
+  NODE_VERSION: '20.x'
+
 on:
   push:
     branches:
