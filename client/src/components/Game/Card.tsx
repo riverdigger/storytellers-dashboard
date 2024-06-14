@@ -6,7 +6,18 @@ import {
 import React from "react";
 import { AvailabilityTag, GMNeededTag, NewTag } from "../Tag/Tags";
 
-const Card = ({
+interface CardProps {
+    title: string,
+    isNew: boolean,
+    playerCount: number,
+    maxPlayerCount: number,
+    schedule: string,
+    gameMaster: string,
+    gameSystem: string,
+    imageUrl: string
+}
+
+const Card: React.FC<CardProps> = ({
   title,
   isNew,
   playerCount,
@@ -49,10 +60,7 @@ const Card = ({
         </div>
         <div className="flex flex-row w-full justify-between">
           <div className="flex flex-row justify-start">
-            <AvailabilityTag
-              playerCount={playerCount}
-              maxPlayerCount={maxPlayerCount}
-            ></AvailabilityTag>
+            <AvailabilityTag playerCount={playerCount} maxPlayerCount={maxPlayerCount}></AvailabilityTag>
           </div>
           <div className="flex flex-row justify-end">
             <div className="flex flex-row justify-center items-center whitespace-nowrap shadow-xl rounded-full border-2 font-bold bg-gray-900 text-white border-white p-1 px-2 text-sm">
