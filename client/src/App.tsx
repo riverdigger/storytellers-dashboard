@@ -12,27 +12,10 @@ import "swiper/css/autoplay";
 // import required modules
 import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 import { FilterBar } from "./pages/Home/components/FilterBar";
-import { useEffect, useState } from "react";
+import GameCollection from './components/Game/GameCollection';
+
 
 function App() {
-  useEffect(() => {
-    const getGamesBody = async () => {
-      const response = await fetch("/games");
-      const body = await response.json();
-      console.log(body);
-    }
-    getGamesBody();
-  }, []);
-
-  useEffect(() => {
-    const sayHello = async () => {
-      const response = await fetch("/test"); // TODO: Update this to point to SQL Server route and use in a loop below
-      const body = await response.json();
-      console.log(body);
-    };
-    sayHello();
-  }, []);
-
   return (
     <div className="App">
       <Navbar></Navbar>
@@ -40,6 +23,7 @@ function App() {
         Active Games
       </h1>
       <FilterBar></FilterBar>
+      <GameCollection></GameCollection>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
