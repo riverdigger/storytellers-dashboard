@@ -26,7 +26,7 @@ function App() {
 
   useEffect(() => {
     const sayHello = async () => {
-      const response = await fetch("/api/hello"); // TODO: Update this to point to SQL Server route and use in a loop below
+      const response = await fetch("/test"); // TODO: Update this to point to SQL Server route and use in a loop below
       const body = await response.json();
       console.log(body);
     };
