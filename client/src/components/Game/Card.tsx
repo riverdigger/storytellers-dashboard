@@ -1,12 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendar,
+  faTimes,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { AvailabilityTag, GMNeededTag, NewTag } from "../Tag/Tags";
 
+
 interface CardProps {
+    id: number,
     title: string,
     isNew: boolean,
     playerCount: number,
@@ -18,6 +21,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({
+  id,
   title,
   isNew,
   playerCount,
@@ -27,6 +31,12 @@ const Card: React.FC<CardProps> = ({
   gameSystem,
   imageUrl,
 }) => {
+  async function getGameBody() {
+    const response = await fetch(`/games/${id}`);
+    const body = await response.json();
+    console.log(body);
+  }
+
   return (
     <div
       className="rounded-xl flex flex-col justify-between text-white"
@@ -40,6 +50,7 @@ const Card: React.FC<CardProps> = ({
         // WebkitBoxReflect:
         // "below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.1))",
       }}
+      onClick={getGameBody}
     >
       <div className="flex flex-row w-full justify-center p-4">
         <div className="flex flex-row justify-center">
@@ -82,3 +93,4 @@ const Card: React.FC<CardProps> = ({
 };
 
 export { Card };
+

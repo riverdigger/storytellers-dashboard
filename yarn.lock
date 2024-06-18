@@ -57,9 +57,158 @@
   integrity sha512-s9Wi/p25+KbzxKlDm3VshQdImhWk+cbdblhwGNnyCU5lpSwtWa4v7VQCxSki0FAUrGA3s8nCWgYzAH41mwQVKQ==
 
 "@eslint/js@^9.4.0":
-  version "9.4.0"
-  resolved "https://registry.npmjs.org/@eslint/js/-/js-9.4.0.tgz"
-  integrity sha512-fdI7VJjP3Rvc70lC4xkFXHB0fiPeojiL1PxVG6t1ZvXQrarj893PweuBTujxDUFk0Fxj4R7PIIAZ/aiiyZPZcg==
+  version "9.5.0"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@eslint/js/-/js-9.5.0.tgz#0e9c24a670b8a5c86bff97b40be13d8d8f238045"
+  integrity sha1-DpwkpnC4pchr/5e0C+E9jY8jgEU=
+
+"@fluentui/date-time-utilities@^8.6.8":
+  version "8.6.8"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/date-time-utilities/-/date-time-utilities-8.6.8.tgz#2296cd6ba89b30a5e837e8d4c064f999ec64e681"
+  integrity sha1-IpbNa6ibMKXoN+jUwGT5mexk5oE=
+  dependencies:
+    "@fluentui/set-version" "^8.2.22"
+    tslib "^2.1.0"
+
+"@fluentui/dom-utilities@^2.3.6":
+  version "2.3.6"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/dom-utilities/-/dom-utilities-2.3.6.tgz#a7dcc0ac707fcf08372b713b4b845022f6d7650c"
+  integrity sha1-p9zArHB/zwg3K3E7S4RQIvbXZQw=
+  dependencies:
+    "@fluentui/set-version" "^8.2.22"
+    tslib "^2.1.0"
+
+"@fluentui/font-icons-mdl2@^8.5.44":
+  version "8.5.44"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/font-icons-mdl2/-/font-icons-mdl2-8.5.44.tgz#203f50d9dd66e458fe122ea0243f694742fa3a72"
+  integrity sha1-ID9Q2d1m5Fj+Ei6gJD9pR0L6OnI=
+  dependencies:
+    "@fluentui/set-version" "^8.2.22"
+    "@fluentui/style-utilities" "^8.10.15"
+    "@fluentui/utilities" "^8.15.10"
+    tslib "^2.1.0"
+
+"@fluentui/foundation-legacy@^8.4.10":
+  version "8.4.10"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/foundation-legacy/-/foundation-legacy-8.4.10.tgz#c301a7f5014271adc40d189bf312d8e49a4f0e20"
+  integrity sha1-wwGn9QFCca3EDRib8xLY5JpPDiA=
+  dependencies:
+    "@fluentui/merge-styles" "^8.6.10"
+    "@fluentui/set-version" "^8.2.22"
+    "@fluentui/style-utilities" "^8.10.15"
+    "@fluentui/utilities" "^8.15.10"
+    tslib "^2.1.0"
+
+"@fluentui/keyboard-key@^0.4.22":
+  version "0.4.22"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/keyboard-key/-/keyboard-key-0.4.22.tgz#1dd3607dd5597bad03d9c604eab24213eb9e07e2"
+  integrity sha1-HdNgfdVZe60D2cYE6rJCE+ueB+I=
+  dependencies:
+    tslib "^2.1.0"
+
+"@fluentui/merge-styles@^8.6.10":
+  version "8.6.10"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/merge-styles/-/merge-styles-8.6.10.tgz#99b63d1be4daf11c6a111564910faa25792f7f02"
+  integrity sha1-mbY9G+Ta8RxqERVkkQ+qJXkvfwI=
+  dependencies:
+    "@fluentui/set-version" "^8.2.22"
+    tslib "^2.1.0"
+
+"@fluentui/react-focus@^8.9.7":
+  version "8.9.7"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/react-focus/-/react-focus-8.9.7.tgz#28f076417eec88bd7b459ef6392a85a060925fc7"
+  integrity sha1-KPB2QX7siL17RZ72OSqFoGCSX8c=
+  dependencies:
+    "@fluentui/keyboard-key" "^0.4.22"
+    "@fluentui/merge-styles" "^8.6.10"
+    "@fluentui/set-version" "^8.2.22"
+    "@fluentui/style-utilities" "^8.10.15"
+    "@fluentui/utilities" "^8.15.10"
+    tslib "^2.1.0"
+
+"@fluentui/react-hooks@^8.8.7":
+  version "8.8.7"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/react-hooks/-/react-hooks-8.8.7.tgz#a7963e4067882e26ece1887e63b4893451ef762c"
+  integrity sha1-p5Y+QGeILibs4Yh+Y7SJNFHvdiw=
+  dependencies:
+    "@fluentui/react-window-provider" "^2.2.26"
+    "@fluentui/set-version" "^8.2.22"
+    "@fluentui/utilities" "^8.15.10"
+    tslib "^2.1.0"
+
+"@fluentui/react-portal-compat-context@^9.0.11":
+  version "9.0.11"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/react-portal-compat-context/-/react-portal-compat-context-9.0.11.tgz#5ed1ebc46b54b7192fe8d3948095506b78b05680"
+  integrity sha1-XtHrxGtUtxkv6NOUgJVQa3iwVoA=
+  dependencies:
+    "@swc/helpers" "^0.5.1"
+
+"@fluentui/react-window-provider@^2.2.26":
+  version "2.2.26"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/react-window-provider/-/react-window-provider-2.2.26.tgz#c66746a2a8946f5d6187675763aab2bd810222c1"
+  integrity sha1-xmdGoqiUb11hh2dXY6qyvYECIsE=
+  dependencies:
+    "@fluentui/set-version" "^8.2.22"
+    tslib "^2.1.0"
+
+"@fluentui/react@^8.118.8":
+  version "8.118.8"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/react/-/react-8.118.8.tgz#15bfba0be4831e50e77ed25967e2aebbd849d747"
+  integrity sha1-Fb+6C+SDHlDnftJZZ+Kuu9hJ10c=
+  dependencies:
+    "@fluentui/date-time-utilities" "^8.6.8"
+    "@fluentui/font-icons-mdl2" "^8.5.44"
+    "@fluentui/foundation-legacy" "^8.4.10"
+    "@fluentui/merge-styles" "^8.6.10"
+    "@fluentui/react-focus" "^8.9.7"
+    "@fluentui/react-hooks" "^8.8.7"
+    "@fluentui/react-portal-compat-context" "^9.0.11"
+    "@fluentui/react-window-provider" "^2.2.26"
+    "@fluentui/set-version" "^8.2.22"
+    "@fluentui/style-utilities" "^8.10.15"
+    "@fluentui/theme" "^2.6.53"
+    "@fluentui/utilities" "^8.15.10"
+    "@microsoft/load-themed-styles" "^1.10.26"
+    tslib "^2.1.0"
+
+"@fluentui/set-version@^8.2.22":
+  version "8.2.22"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/set-version/-/set-version-8.2.22.tgz#e7281fdac10cfa6131fb755bc407d356627ac889"
+  integrity sha1-5ygf2sEM+mEx+3VbxAfTVmJ6yIk=
+  dependencies:
+    tslib "^2.1.0"
+
+"@fluentui/style-utilities@^8.10.15":
+  version "8.10.15"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/style-utilities/-/style-utilities-8.10.15.tgz#ca423c58a376d55aaa97f2adebdd638282a0d9d9"
+  integrity sha1-ykI8WKN21Vqql/Kt691jgoKg2dk=
+  dependencies:
+    "@fluentui/merge-styles" "^8.6.10"
+    "@fluentui/set-version" "^8.2.22"
+    "@fluentui/theme" "^2.6.53"
+    "@fluentui/utilities" "^8.15.10"
+    "@microsoft/load-themed-styles" "^1.10.26"
+    tslib "^2.1.0"
+
+"@fluentui/theme@^2.6.53":
+  version "2.6.53"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/theme/-/theme-2.6.53.tgz#1c729f8c05b72194d09ee143ff40d51a744586c2"
+  integrity sha1-HHKfjAW3IZTQnuFD/0DVGnRFhsI=
+  dependencies:
+    "@fluentui/merge-styles" "^8.6.10"
+    "@fluentui/set-version" "^8.2.22"
+    "@fluentui/utilities" "^8.15.10"
+    tslib "^2.1.0"
+
+"@fluentui/utilities@^8.15.10":
+  version "8.15.10"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@fluentui/utilities/-/utilities-8.15.10.tgz#ca281edf3409621b4e4405b7409cd3f4d0692cbe"
+  integrity sha1-yige3zQJYhtORAW3QJzT9NBpLL4=
+  dependencies:
+    "@fluentui/dom-utilities" "^2.3.6"
+    "@fluentui/merge-styles" "^8.6.10"
+    "@fluentui/react-window-provider" "^2.2.26"
+    "@fluentui/set-version" "^8.2.22"
+    tslib "^2.1.0"
 
 "@jridgewell/resolve-uri@^3.0.3":
   version "3.1.2"
@@ -78,6 +227,11 @@
   dependencies:
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
+
+"@microsoft/load-themed-styles@^1.10.26":
+  version "1.10.295"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@microsoft/load-themed-styles/-/load-themed-styles-1.10.295.tgz#d3c8d7ab186f422727ba112d6ebe5fe8e41051d9"
+  integrity sha1-08jXqxhvQicnuhEtbr5f6OQQUdk=
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -99,6 +253,18 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@remix-run/router@1.16.1":
+  version "1.16.1"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@remix-run/router/-/router-1.16.1.tgz"
+  integrity sha1-c9s8SLl17rBtAAZIG95PXy0X0c0=
+
+"@swc/helpers@^0.5.1":
+  version "0.5.11"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/@swc/helpers/-/helpers-0.5.11.tgz#5bab8c660a6e23c13b2d23fcd1ee44a2db1b0cb7"
+  integrity sha1-W6uMZgpuI8E7LSP80e5EotsbDLc=
+  dependencies:
+    tslib "^2.4.0"
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.11"
@@ -289,14 +455,16 @@ accepts@~1.3.8:
     negotiator "0.6.3"
 
 acorn-walk@^8.1.1:
-  version "8.3.2"
-  resolved "https://registry.npmjs.org/acorn-walk/-/acorn-walk-8.3.2.tgz"
-  integrity sha512-cjkyv4OtNCIeqhHrfS81QWXoCBPExR/J62oyEqepVw8WaQeSqpW2uhuLPh1m9eWhDuOo/jUXVTlifvesOWp/4A==
+  version "8.3.3"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/acorn-walk/-/acorn-walk-8.3.3.tgz#9caeac29eefaa0c41e3d4c65137de4d6f34df43e"
+  integrity sha1-nK6sKe76oMQePUxlE33k1vNN9D4=
+  dependencies:
+    acorn "^8.11.0"
 
-acorn@^8.4.1:
-  version "8.11.3"
-  resolved "https://registry.npmjs.org/acorn/-/acorn-8.11.3.tgz"
-  integrity sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==
+acorn@^8.11.0, acorn@^8.4.1:
+  version "8.12.0"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/acorn/-/acorn-8.12.0.tgz#1627bfa2e058148036133b8d9b51a700663c294c"
+  integrity sha1-Fie/ouBYFIA2EzuNm1GnAGY8KUw=
 
 ansi-regex@^5.0.1:
   version "5.0.1"
@@ -1018,8 +1186,8 @@ fs.realpath@^1.0.0:
 
 fsevents@~2.3.2:
   version "2.3.3"
-  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
-  integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
+  integrity sha1-ysZAd4XQNnWipeGlMFxpezR9kNY=
 
 function-bind@^1.1.2:
   version "1.1.2"
@@ -1086,9 +1254,9 @@ glob@^7.1.1:
     path-is-absolute "^1.0.0"
 
 globals@^15.4.0:
-  version "15.4.0"
-  resolved "https://registry.npmjs.org/globals/-/globals-15.4.0.tgz"
-  integrity sha512-unnwvMZpv0eDUyjNyh9DH/yxUaRYrEjW/qK4QcdrHg3oO11igUQrCSgODHEqxlKg8v2CD2Sd7UkqqEBoz5U7TQ==
+  version "15.6.0"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/globals/-/globals-15.6.0.tgz#3872d3ab4427e1df4718efd3f7d2c721c503f65f"
+  integrity sha1-OHLTq0Qn4d9HGO/T99LHIcUD9l8=
 
 globalthis@^1.0.3:
   version "1.0.4"
@@ -1534,8 +1702,8 @@ ms@2.0.0:
 
 ms@2.1.2:
   version "2.1.2"
-  resolved "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"
-  integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/ms/-/ms-2.1.2.tgz"
+  integrity sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=
 
 ms@2.1.3:
   version "2.1.3"
@@ -1742,6 +1910,21 @@ react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-router-dom@^6.23.1:
+  version "6.23.1"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/react-router-dom/-/react-router-dom-6.23.1.tgz"
+  integrity sha1-MMvyZmaWk+lJKqT8Dd4lQasCMi8=
+  dependencies:
+    "@remix-run/router" "1.16.1"
+    react-router "6.23.1"
+
+react-router@6.23.1:
+  version "6.23.1"
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/react-router/-/react-router-6.23.1.tgz"
+  integrity sha1-0Iy9vZ1q7cE+6m6UvG2bKcscS+k=
+  dependencies:
+    "@remix-run/router" "1.16.1"
 
 readdirp@~3.6.0:
   version "3.6.0"
@@ -2033,8 +2216,8 @@ supports-color@^5.3.0, supports-color@^5.5.0:
 
 supports-color@^7.1.0:
   version "7.2.0"
-  resolved "https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz"
-  integrity sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
+  resolved "https://pkgs.dev.azure.com/msazure/_packaging/AzureIOTSaas/npm/registry/supports-color/-/supports-color-7.2.0.tgz"
+  integrity sha1-G33NyzK4E4gBs+R4umpRyqiWSNo=
   dependencies:
     has-flag "^4.0.0"
 
@@ -2101,7 +2284,7 @@ tslib@^1.13.0, tslib@^1.8.1:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.1.0:
+tslib@^2.1.0, tslib@^2.4.0:
   version "2.6.3"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.6.3.tgz"
   integrity sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==

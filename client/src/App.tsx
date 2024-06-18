@@ -1,6 +1,4 @@
 import './App.css';
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Card } from "./components/Game/Card";
 import { Navbar } from "./components/Navbar/Navbar";
 
 // Import Swiper styles
@@ -10,21 +8,18 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 
 // import required modules
-import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
-import { FilterBar } from "./pages/Home/components/FilterBar";
 import GameCollection from './components/Game/GameCollection';
 
-
 function App() {
+
   return (
     <div className="App">
       <Navbar></Navbar>
       <h1 className="text-4xl font-bold text-center text-white pt-4">
         Active Games
       </h1>
-      <FilterBar></FilterBar>
       <GameCollection></GameCollection>
-      <Swiper
+      {/* <Swiper
         effect={"coverflow"}
         grabCursor={true}
         loop={true}
@@ -178,7 +173,7 @@ function App() {
             imageUrl="https://th.bing.com/th/id/OIP.t4RbVyAjhP47licwnsylzQAAAA?rs=1&pid=ImgDetMain"
           ></Card>
         </SwiperSlide>
-      </Swiper>
+      </Swiper> */}
     </div>
   );
 }

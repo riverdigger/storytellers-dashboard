@@ -64,6 +64,23 @@ class Database {
     return result.recordsets[0];
   }
 
+  async query(query) {
+    await this.connect();
+
+    const request = this.poolconnection.request();
+
+    request.input("title", sql.NVarChar(255), query.title);
+    console.log(`query: ${JSON.stringify(query)}`);
+
+    var queryString = `SELECT * FROM Game`;
+    if (query.title !== undefined) {
+      queryString += ` WHERE CHARINDEX(@title, title) > 0`;
+    }
+    const result = await request.query(queryString);
+
+    return result.recordsets[0];
+  }
+
   async read(id) {
     await this.connect();
 
