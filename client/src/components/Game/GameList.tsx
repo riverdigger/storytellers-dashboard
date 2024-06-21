@@ -14,7 +14,7 @@ import EmptyCollection from "./EmptyCollection";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const GameCollection = () => {
+const GameList = () => {
   const [games, setGames] = useState([]);
 
   function FilterBar() {
@@ -35,7 +35,7 @@ const GameCollection = () => {
           setGames([]);
         }
         console.log(body);
-    }
+    };
   
     return (
       <form onSubmit={e => e.preventDefault()} className="w-full flex flex-row justify-center items-center my-4">
@@ -73,10 +73,58 @@ const GameCollection = () => {
   }, []);
 
   if (games.length === 0) {
+    const tempGames = [{
+      id: 1,
+      title: "Test Game",
+      gm_id: "Test GM",
+      max_players: 6,
+      schedule: "Test Schedule",
+      system: "Test System",
+      image_url: "https://via.placeholder.com/400x600",
+      createdAt: new Date(),
+    }];
     return (
       <div className="flex flex-col justify-center items-center w-full">
         <FilterBar></FilterBar>
-        <EmptyCollection></EmptyCollection>
+        <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            loop={games.length < 5 ? false : true}
+            centeredSlides={true}
+            slidesPerView={5}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            coverflowEffect={{
+              rotate: 10,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            }}
+            pagination={false}
+            modules={[EffectCoverflow, Pagination, Autoplay]}
+            className="bg-transparent w-full"
+          >
+            {tempGames.map(game => (
+                <SwiperSlide>
+                    <Card
+                    id={game["id"]}
+                    title={game["title"]}
+                    gameMaster={game["gm_id"]}
+                    playerCount={0}
+                    maxPlayerCount={game["max_players"]}
+                    isNew={(new Date().getTime() - new Date(game["createdAt"]).getTime()) <= (3 * 1000 * 86400) ? true : false}
+                    schedule={game["schedule"]}
+                    gameSystem={game["system"]}
+                    imageUrl={game["image_url"]}
+                    ></Card>
+                </SwiperSlide>
+          ))}
+          </Swiper>
+        {/* <EmptyCollection></EmptyCollection> */}
       </div>
     );
   } else {
@@ -126,4 +174,4 @@ const GameCollection = () => {
   }
 }
 
-export default GameCollection;
+export default GameList;

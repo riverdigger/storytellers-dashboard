@@ -45,4 +45,20 @@ const NewTag: React.FC<TagProps> = ({ isNew }) => {
     return null;
 };
 
-export { AvailabilityTag, GMNeededTag, NewTag };
+const GMTag: React.FC<TagProps> = () => {
+  return (
+    <span className="shadow-xl rounded-full border-2 font-bold bg-yellow-900 text-yellow-300 border-yellow-300 px-2">
+      GM
+    </span>
+  );
+};
+
+const PlayerTag: React.FC<TagProps> = () => {
+  return (
+    <span className="shadow-xl rounded-full border-2 font-bold bg-green-900 text-green-300 border-green-300 px-2">
+      Player
+    </span>
+  );
+};
+
+export { AvailabilityTag, GMNeededTag, NewTag, GMTag, PlayerTag};

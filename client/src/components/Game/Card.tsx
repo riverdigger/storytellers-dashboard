@@ -1,12 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendar,
-  faTimes,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { AvailabilityTag, GMNeededTag, NewTag } from "../Tag/Tags";
-
+import { useNavigate } from "react-router-dom";
 
 interface CardProps {
     id: number,
@@ -37,6 +36,8 @@ const Card: React.FC<CardProps> = ({
     console.log(body);
   }
 
+  const navigate = useNavigate();
+
   return (
     <div
       className="rounded-xl flex flex-col justify-between text-white"
@@ -50,7 +51,7 @@ const Card: React.FC<CardProps> = ({
         // WebkitBoxReflect:
         // "below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.1))",
       }}
-      onClick={getGameBody}
+      onClick={e => navigate(`/game/${id}`)}
     >
       <div className="flex flex-row w-full justify-center p-4">
         <div className="flex flex-row justify-center">
