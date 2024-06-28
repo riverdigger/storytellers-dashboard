@@ -10,7 +10,7 @@ const Actions: React.FC<ActionProps> = ({
   }) => {
     if (owner) {
         return (
-            <div className="w-full flex justify-end items-center mt-64 flex-end">
+            <div className="w-full flex justify-end items-center mt-48 flex-end">
                 <FontAwesomeIcon icon={faGear} className="pr-2" />
                 <p className="text-md">Edit</p>
             </div>

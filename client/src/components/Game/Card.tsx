@@ -7,7 +7,7 @@ import React from "react";
 import { AvailabilityTag, GMNeededTag, NewTag } from "../Tag/Tags";
 import { useNavigate } from "react-router-dom";
 
-interface CardProps {
+export interface CardProps {
     id: number,
     title: string,
     isNew: boolean,
@@ -40,7 +40,7 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <div
-      className="rounded-xl flex flex-col justify-between text-white"
+      className="rounded-xl flex flex-col justify-between text-light cursor-pointer"
       style={{
         backgroundImage: `url(${imageUrl})`,
         backgroundSize: "cover",
@@ -75,15 +75,15 @@ const Card: React.FC<CardProps> = ({
             <AvailabilityTag playerCount={playerCount} maxPlayerCount={maxPlayerCount}></AvailabilityTag>
           </div>
           <div className="flex flex-row justify-end">
-            <div className="flex flex-row justify-center items-center whitespace-nowrap shadow-xl rounded-full border-2 font-bold bg-gray-900 text-white border-white p-1 px-2 text-sm">
+            <div className="flex flex-row justify-center items-center whitespace-nowrap shadow-xl rounded-full border-2 font-bold bg-theme-purple-800 text-light border-light p-1 px-2 text-sm">
               <FontAwesomeIcon icon={faUser} className="pr-2 pl-1" />
               {playerCount}
             </div>
-            <div className="flex flex-row justify-center items-center whitespace-nowrap shadow-xl rounded-full border-2 font-bold bg-gray-900 text-white border-white p-1 px-2 ml-1 text-sm">
+            <div className="flex flex-row justify-center items-center whitespace-nowrap shadow-xl rounded-full border-2 font-bold bg-theme-purple-800 text-light border-light p-1 px-2 ml-1 text-sm">
               <FontAwesomeIcon icon={faCalendar} className="pr-2 pl-1" />
               {schedule}
             </div>
-            <div className="flex flex-row justify-center items-center whitespace-nowrap shadow-xl rounded-full border-2 font-bold bg-gray-900 text-white border-white p-1 px-2 ml-1 text-sm">
+            <div className="flex flex-row justify-center items-center whitespace-nowrap shadow-xl rounded-full border-2 font-bold bg-theme-purple-800 text-light border-light p-1 px-2 ml-1 text-sm">
               {gameSystem}
             </div>
           </div>

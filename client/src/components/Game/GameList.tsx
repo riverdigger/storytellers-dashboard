@@ -11,11 +11,14 @@ import "swiper/css/autoplay";
 import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
 import EmptyCollection from "./EmptyCollection";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 
 const GameList = () => {
   const [games, setGames] = useState([]);
+
+  const navigate = useNavigate();
 
   function FilterBar() {
     const [search, setSearch] = useState("");
@@ -38,23 +41,28 @@ const GameList = () => {
     };
   
     return (
-      <form onSubmit={e => e.preventDefault()} className="w-full flex flex-row justify-center items-center my-4">
-        <div className="w-1/2 bg-purple-1100 h-8 rounded-full flex flex-row justify-start items-center py-4 px-2">
-          <FontAwesomeIcon icon={faSearch} className="text-xl text-white" />
-          <input
-            name="search"
-            type="text"
-            placeholder="Search for a game"
-            className="bg-transparent text-white ml-2 w-full"
-            onChange={(e) => setSearch(e.target.value)}
-          />
+      <div className="flex justify-center items-center my-4 w-full">
+        <div 
+          className="border-1 rounded bg-green-500 hover:bg-green-600 text-green-100 cursor-pointer text-lg font-bold p-1 px-2 mr-4"
+          onClick={e => navigate(`/create`)}
+        >
+          <FontAwesomeIcon icon={faPlus} className="mr-1"></FontAwesomeIcon>Create
         </div>
-        <div className="flex flex-row justify-end items-center ml-4">
-          <button onClick={submitForm} type="submit" className="bg-purple-1100 rounded-full h-8 w-8 flex justify-center items-center ml-2">
-            <FontAwesomeIcon icon={faSearch} className="text-white" />
-          </button>
-        </div>
-      </form>
+        <form onSubmit={e => e.preventDefault()} className="w-96 my-4">
+          <div className="bg-theme-purple-500 h-8 rounded-full flex flex-row justify-start items-center py-4 px-2">
+            <button onClick={submitForm} type="submit" className="bg-theme-purple-500 rounded-full h-8 w-8 flex justify-center items-center">
+              <FontAwesomeIcon icon={faSearch} className="text-light" />
+            </button>
+            <input
+              name="search"
+              type="text"
+              placeholder="Search for a game"
+              className="bg-transparent text-light grow"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+        </form>
+      </div>
     );
   }
 

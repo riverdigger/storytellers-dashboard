@@ -9,7 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #24182b;
+  background-color: #35355a;
+  background: radial-gradient(circle, rgba(53,53,90,1) 65%, rgba(45,45,77,1) 100%);
 }
 
 code {
@@ -17,14 +18,46 @@ code {
     monospace;
 }
 
-.bg-purple-1000 {
-  background-color: #24182b;
+.animate-grow { 
+  transition: all .1s ease-in-out; 
+}
+  
+.animate-grow:hover { 
+  transform: scale(1.02); 
 }
 
-.bg-purple-1100 {
-  background-color: #19101e;
+.bg-theme-purple-300 {
+  background-color: #b8b8ff;
 }
 
-.bg-light-purple-1000 {
-  background-color: #2d1f3b;
+.bg-theme-purple-400 {
+  background-color: #A899FF;
+}
+
+.bg-theme-purple-500 {
+  background-color: #434371;
+}
+
+.bg-theme-purple-600 {
+  background-color: #35355a;
+}
+
+.bg-theme-purple-700 {
+  background-color: #2d2d4d;
+}
+
+.bg-theme-purple-800 {
+  background-color: #262640;
+}
+
+.border-light {
+  border-color: #FFFAEB;
+}
+
+.text-light {
+  color: #FFFAEB;
+}
+
+.text-dark {
+  color: #c7c2b4;
 }

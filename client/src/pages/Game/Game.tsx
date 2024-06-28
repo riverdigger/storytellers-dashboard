@@ -1,15 +1,15 @@
 // import required modules
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Error500 } from "../Error/500";
+import { Error500 } from "../../components/Error/500";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGear,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import { PlayerList } from "../Player/PlayerList";
-import { Schedule } from "../Schedule/Schedule";
-import { Actions } from "./Actions";
+import { PlayerList } from "../../components/Player/PlayerList";
+import { Schedule } from "../../components/Schedule/Schedule";
+import { Actions } from "../../components/Game/Actions";
 
 const Game = () => {
   const { id } = useParams();
@@ -32,11 +32,11 @@ const Game = () => {
   }, []);
 
   return (
-    <div className="flex justify-between items-start w-full h-full text-white py-8 px-72">
+    <div className="flex justify-between items-start w-full h-full text-light py-8 px-72">
       {/* Left Column */}
       <div className="flex flex-col justify-start items-center">
         <div
-          className="rounded-xl flex flex-col justify-between text-white"
+          className="rounded-xl flex flex-col justify-between text-light"
           style={{
             backgroundImage: `url(${(game && !game["error"]) ? game["imageUrl"] : "https://via.placeholder.com/400x600"})`,
             backgroundSize: "cover",
@@ -47,7 +47,7 @@ const Game = () => {
           }}
         >
         </div>
-        <div className="flex flex-col justify-start items-start w-full mt-4 bg-purple-1100 rounded-xl p-2">
+        <div className="flex flex-col justify-start items-start w-full mt-4 bg-theme-purple-500 rounded-xl p-2">
           <div className="flex justify-between items-center text-md text-gray-300 w-full">
             <b>Created At:</b> {(game && !game["error"]) ? game["createdAt"] : dateTime}
           </div>

@@ -3,7 +3,7 @@ import { PlayerTag } from "../Tag/Tags";
 const PlayerCard = () => {
 
     return (
-        <div className="flex flex-col justify-center items-center rounded-xl bg-gray-600 p-2 mr-4">
+        <div className="flex flex-col justify-center items-center rounded-xl bg-theme-purple-600 p-2 mr-4 w-28">
             <div
                 className="rounded-full shadow-lg"
                 style={{
@@ -14,7 +14,7 @@ const PlayerCard = () => {
                     height: "64px",
                   }}
             ></div>
-            <h1 className="text-lg text-white">User Name</h1>
+            <h1 className="text-md text-light mb-1">MediumUser MediumName</h1>
             <PlayerTag></PlayerTag>
         </div>
     );

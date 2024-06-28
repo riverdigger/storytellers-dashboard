@@ -4,9 +4,11 @@ const Home = () => {
 
     return (
         <div>
-            <h1 className="text-4xl font-bold text-center text-white pt-4">
-                Active Games
-            </h1>
+            <div className="flex justify-center items-center w-full">
+              <h1 className="text-4xl font-bold text-center text-light pt-4">
+                  Active Games
+              </h1>
+            </div>
             <GameList></GameList>
         </div>
     );

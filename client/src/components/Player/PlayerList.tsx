@@ -30,9 +30,9 @@ const PlayerList: React.FC<PlayerListProps> = ({
     getPlayersBody();
   }, []);
     return (
-        <div className="w-full flex flex-col justify-start items-start mt-4 shadow-md">
-            <h2 className="text-xl text-white font-bold mb-2">Participants</h2>
-            <div className="flex justify-start items-center w-full rounded-xl bg-purple-1100 p-4">
+        <div className="w-full flex flex-col justify-start items-start mt-16">
+            <h2 className="text-xl text-light font-bold mb-2">Participants</h2>
+            <div className="flex justify-start items-center w-full rounded-xl bg-theme-purple-500 p-4 shadow-md">
                 {/* TODO: Fix to show proper empty list */}
                 {players && players.map(player => (
                     <PlayerCard></PlayerCard>

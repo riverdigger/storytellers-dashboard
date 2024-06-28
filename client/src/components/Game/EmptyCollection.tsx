@@ -17,8 +17,8 @@ import {
 const EmptyCollection = () => {
 
 return (
-    <div className="flex justify-center items-center h-96 w-full bg-purple-1100">
-    <div className="text-xl font-bold text-white flex flex-col justify-center items-center">
+    <div className="flex justify-center items-center h-96 w-full bg-theme-purple-500">
+    <div className="text-xl font-bold text-light flex flex-col justify-center items-center">
         <FontAwesomeIcon icon={faWarning} className="text-4xl" />
         <span>No games found</span>
     </div>

@@ -4,9 +4,9 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 const EmptyPlayerCard = () => {
 
     return (
-        <div className="flex flex-col justify-center items-center rounded-xl bg-gray-800 p-2 mr-4 h-max">
+        <div className="flex flex-col justify-center items-center rounded-xl bg-theme-purple-700 p-2 mr-4 h-max">
             <div
-                className="rounded-full shadow-lg bg-gray-700 flex justify-center items-center"
+                className="rounded-full shadow-lg bg-theme-purple-800 flex justify-center items-center"
                 style={{
                     width: "64px",
                     height: "64px",
