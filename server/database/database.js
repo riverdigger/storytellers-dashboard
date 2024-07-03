@@ -46,11 +46,23 @@ export default class Database {
     await this.connect();
     const request = this.poolconnection.request();
 
+    // title: "",
+    // description: "",
+    // schedule: "",
+    // system: "",
+    // gameMaster: "",
+    // imageUrl: "",
+    // startDate: new Date(),
+    // maxPlayers: 0,
     request.input("title", sql.NVarChar(255), data.title);
     request.input("description", sql.NVarChar(255), data.description);
+    request.input("schedule", sql.NVarChar(255), data.schedule);
+    request.input("system", sql.NVarChar(255), data.system);
+    request.input("imageUrl", sql.NVarChar(255), data.imageUrl);
+    request.input("maxPlayers", sql.BigInt, data.maxPlayers);
 
     const result = await request.query(
-      `INSERT INTO Game (title, description) VALUES (@title, @description)`
+      `INSERT INTO Game (title, description, schedule, system, imageUrl, maxPlayers) VALUES (@title, @description, @schedule, @system, @imageUrl, @maxPlayers)`
     );
 
     return result.rowsAffected[0];

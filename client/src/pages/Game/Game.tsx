@@ -49,10 +49,10 @@ const Game = () => {
         </div>
         <div className="flex flex-col justify-start items-start w-full mt-4 bg-theme-purple-500 rounded-xl p-2">
           <div className="flex justify-between items-center text-md text-gray-300 w-full">
-            <b>Created At:</b> {(game && !game["error"]) ? game["createdAt"] : dateTime}
+            <b>Created At:</b> {(game && !game["error"]) ? new Date(game["createdAt"]).toLocaleString() : dateTime}
           </div>
           <div className="flex justify-between items-center text-md text-gray-300 w-full">
-            <b>Updated At:</b> {(game && !game["error"]) ? game["updatedAt"] : dateTime}
+            <b>Updated At:</b> {(game && !game["error"]) ? new Date(game["updatedAt"]).toLocaleString() : dateTime}
           </div>
         </div>
       </div>
@@ -67,14 +67,14 @@ const Game = () => {
               <FontAwesomeIcon icon={faUser} className="pr-1 text-lg" />{(game && !game["error"]) ? game["gameMaster"] : "VeryLongFirstName EvenLongerLastName"}
             </h2>
           </div>
-          <Schedule schedule={(game && !game["error"]) ? game["schedule"] : "WEEKLY"}></Schedule>
+          <Schedule schedule={(game && !game["error"]) ? game["schedule"] : "WEEKLY"} startDate={(game && !game["error"]) ? game["startDate"] : undefined} nextDate={(game && !game["error"]) ? game["nextDate"] : undefined}></Schedule>
         </div>
         <div className="flex flex-col justify-start items-start w-full h-full grow">
           <h2 className="text-xl font-bold text-left">
             Details
           </h2>
           <p className="text-xl text-left">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            {(game && !game["error"]) ? game["description"] : "No description found."}
           </p>
         </div>
         <PlayerList maxPlayers={(game && !game["error"]) ? game["maxPlayers"] : 5}></PlayerList>

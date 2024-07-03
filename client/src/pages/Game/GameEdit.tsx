@@ -14,7 +14,7 @@ const GameCreate = () => {
               Create Game
           </h1>
         </div>
-        <div className="w-full flex justify-center items-start">
+        <div className="w-full flex justify-center items-start mb-24">
           <GameForm></GameForm>
         </div>
     </div>

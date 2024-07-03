@@ -13,12 +13,14 @@ import { timezones } from "../../common/timezones";
 const initialValues = {
   title: "",
   description: "",
-  schedule: "",
-  system: "",
+  schedule: "WEEKLY",
+  system: "D&D 5e",
   gameMaster: "",
   imageUrl: "",
   startDate: new Date(),
   maxPlayers: 0,
+  hidden: true,
+  active: false,
 };
 
 const GameForm = () => {
@@ -53,7 +55,7 @@ const GameForm = () => {
     });
     const body = await response.json();
     console.log(body);
-    navigate('/');
+    navigate('/home');
   };
 
   return (

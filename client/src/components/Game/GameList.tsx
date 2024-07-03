@@ -43,7 +43,7 @@ const GameList = () => {
     return (
       <div className="flex justify-center items-center my-4 w-full">
         <div 
-          className="border-1 rounded bg-green-500 hover:bg-green-600 text-green-100 cursor-pointer text-lg font-bold p-1 px-2 mr-4"
+          className="border-1 rounded bg-green-500 hover:bg-green-600 text-gray-900 cursor-pointer text-lg p-2 px-3 mr-4"
           onClick={e => navigate(`/create`)}
         >
           <FontAwesomeIcon icon={faPlus} className="mr-1"></FontAwesomeIcon>Create
@@ -84,11 +84,11 @@ const GameList = () => {
     const tempGames = [{
       id: 1,
       title: "Test Game",
-      gm_id: "Test GM",
-      max_players: 6,
+      gmId: "Test GM",
+      maxPlayers: 6,
       schedule: "Test Schedule",
       system: "Test System",
-      image_url: "https://via.placeholder.com/400x600",
+      imageUrl: "https://via.placeholder.com/400x600",
       createdAt: new Date(),
     }];
     return (
@@ -121,13 +121,13 @@ const GameList = () => {
                     <Card
                     id={game["id"]}
                     title={game["title"]}
-                    gameMaster={game["gm_id"]}
+                    gameMaster={game["gmId"]}
                     playerCount={0}
-                    maxPlayerCount={game["max_players"]}
+                    maxPlayerCount={game["maxPlayers"]}
                     isNew={(new Date().getTime() - new Date(game["createdAt"]).getTime()) <= (3 * 1000 * 86400) ? true : false}
                     schedule={game["schedule"]}
                     gameSystem={game["system"]}
-                    imageUrl={game["image_url"]}
+                    imageUrl={game["imageUrl"]}
                     ></Card>
                 </SwiperSlide>
           ))}
@@ -166,13 +166,13 @@ const GameList = () => {
                     <Card
                     id={game["id"]}
                     title={game["title"]}
-                    gameMaster={game["gm_id"]}
+                    gameMaster={game["gmId"]}
                     playerCount={0}
-                    maxPlayerCount={game["max_players"]}
+                    maxPlayerCount={game["maxPlayers"]}
                     isNew={(new Date().getTime() - new Date(game["createdAt"]).getTime()) <= (3 * 1000 * 86400) ? true : false}
                     schedule={game["schedule"]}
                     gameSystem={game["system"]}
-                    imageUrl={game["image_url"]}
+                    imageUrl={game["imageUrl"]}
                     ></Card>
                 </SwiperSlide>
           ))}

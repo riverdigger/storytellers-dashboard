@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface ScheduleProps {
     schedule: string,
-    startDate?: string,
-    nextDate?: string,
+    startDate?: Date,
+    nextDate?: Date,
 }
 
 const Schedule: React.FC<ScheduleProps> = ({
@@ -20,10 +20,10 @@ const Schedule: React.FC<ScheduleProps> = ({
             <div className="text-gray-300">
                 <h1 className="text-lg font-bold text-left">{schedule}</h1>
                 <div className="flex justify-between items-center text-md w-full whitespace-nowrap">
-                    <b className="mr-1">First:</b> { startDate ? startDate : dateTime}
+                    <b className="mr-1">First:</b> { startDate ? new Date(startDate).toLocaleString() : dateTime}
                 </div>
                 <div className="flex justify-between items-center text-md w-full whitespace-nowrap">
-                    <b className="mr-1">Next:</b> { nextDate ? nextDate : dateTime}
+                    <b className="mr-1">Next:</b> { nextDate ? new Date(nextDate).toLocaleString() : dateTime}
                 </div>
             </div>
         </div>

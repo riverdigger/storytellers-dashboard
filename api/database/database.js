@@ -46,14 +46,45 @@ class Database {
     await this.connect();
     const request = this.poolconnection.request();
 
+          // id int NOT NULL IDENTITY,
+          // title varchar(255),
+          // description varchar(255),
+          // active bit,
+          // hidden bit,
+          // system varchar(255),
+          // gmId int,
+          // imageUrl varchar(255),
+          // maxPlayers int,
+          // schedule varchar(255),
+          // timezone datetimeoffset,
+          // startDate datetime,
+          // nextDate datetime,
+          // createdAt datetime,
+          // updatedAt datetime,
     request.input("title", sql.NVarChar(255), data.title);
-    request.input("description", sql.NVarChar(255), data.description);
+    request.input("description", sql.Text, data.description);
+    request.input("active", sql.Bit, data.active);
+    request.input("hidden", sql.Bit, data.hidden);
+    request.input("system", sql.NVarChar(255), data.system);
+    request.input("imageUrl", sql.NVarChar(255), data.imageUrl);
+    request.input("maxPlayers", sql.BigInt, data.maxPlayers);
+    request.input("schedule", sql.NVarChar(255), data.schedule);
+    request.input("timezone", sql.DateTimeOffset, data.timezone);
+    request.input("startDate", sql.DateTime, data.startDate);
+    request.input("createdAt", sql.DateTime, new Date());
+    request.input("updatedAt", sql.DateTime, new Date());
 
-    const result = await request.query(
-      `INSERT INTO Game (title, description) VALUES (@title, @description)`
-    );
-
-    return result.rowsAffected[0];
+    try {
+      const result = await request.query(
+        `INSERT INTO Game (title, description, active, hidden, system, imageUrl, maxPlayers, schedule, timezone, startDate, createdAt, updatedAt) VALUES (@title, @description, @active, @hidden, @system, @imageUrl, @maxPlayers, @schedule, @timezone, @startDate, @createdAt, @updatedAt)`
+      );
+      return result.rowsAffected[0];
+    } catch (err) {
+      if (err !== undefined) {
+        console.error(`Error creating game: ${err}`);      
+      }
+      return null;
+    }
   }
 
   async readAll() {

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({}) => {
   return (
-    <div className="flex flex-row justify-between items-center w-full bg-theme-purple-500 py-2 px-8">
+    <div className="flex flex-row justify-between items-center w-full bg-theme-purple-500 py-2 px-8 z-20">
       <div className="flex flex-row justify-start items-center">
         <FontAwesomeIcon
           icon={faDiceD20}

@@ -9,6 +9,7 @@ In the project directory, you can run:
 - Server now exists in /api and is working on Port 9000
 - Client is still in /client
 - /server is no longer needed
+- Table is Game (singular)
 - Abstract env variables
 
 ### Dev Dependency Error
