@@ -3,7 +3,8 @@ import { Navbar } from "./components/Navbar/Navbar";
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Game from './pages/Game/Game';
-import GameCreate from './pages/Game/GameEdit';
+import GameCreate from './pages/Game/GameCreate';
+import GameEdit from './pages/Game/GameEdit';
 import Starfield from './components/Starfield/Starfield';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/about" element={<Home />} />
         <Route path="/profile" element={<Home />} />
         <Route path="/create" element={<GameCreate />} />
+        <Route path="/edit/:id" element={<GameEdit />} />
         <Route path="/game/:id" element={<Game />} />
       </Routes>
     </div>

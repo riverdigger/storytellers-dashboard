@@ -47,7 +47,7 @@ const Game = () => {
           }}
         >
         </div>
-        <div className="flex flex-col justify-start items-start w-full mt-4 bg-theme-purple-500 rounded-xl p-2">
+        <div className="flex flex-col justify-start items-start w-full mt-4 bg-theme-purple-500 rounded-xl p-2 shadow-md">
           <div className="flex justify-between items-center text-md text-gray-300 w-full">
             <b>Created At:</b> {(game && !game["error"]) ? new Date(game["createdAt"]).toLocaleString() : dateTime}
           </div>

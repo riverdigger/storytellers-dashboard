@@ -27,6 +27,18 @@ const GameForm = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [game, setGame] = useState();
+
+  useEffect(() => {
+    async function getGameBody() {
+      const response = await fetch(`/games/${id}`);
+      const body = await response.json();
+      setGame(body);
+      console.log(body);
+    }
+    getGameBody();
+  }, []);
+
+
   const [values, setValues] = useState(initialValues);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -63,7 +75,7 @@ const GameForm = () => {
         <div className="flex flex-col justify-start items-start w-full mb-4">
           <label htmlFor="title" className="text-light text-lg">Title</label>
           <input
-            value={values.title}
+            value={game ? game["title"] : values.title}
             onChange={handleInputChange}
             placeholder="Ex: The Lost Mines of Phandelver"
             name="title"
@@ -75,7 +87,7 @@ const GameForm = () => {
         <div className="flex flex-col justify-start items-start w-full mb-4">
           <label htmlFor="description" className="text-light text-lg">Description</label>
           <textarea
-            value={values.description}
+            value={game ? game["description"] : values.description}
             onChange={handleTextAreaChange}
             placeholder="Tell us all about your game!"
             name="description"
@@ -90,7 +102,7 @@ const GameForm = () => {
             <label htmlFor="system" className="text-light text-lg">System</label>
             <select name="system" className="w-full rounded-lg p-2 bg-theme-purple-500 text-light cursor-pointer">
               {Object.keys(systems).map((system) => (
-                <option value={system} className="">{systems[system]}</option>
+                <option value={system} className="" defaultChecked={game && game["system"] == system}>{systems[system]}</option>
               ))}
             </select>
           </div>
@@ -98,7 +110,7 @@ const GameForm = () => {
           <div className="flex flex-col justify-start items-start w-1/2">
             <label htmlFor="maxPlayers" className="text-light text-lg">Max # of Players</label>
             <input
-              value={values.maxPlayers}
+              value={game ? game["maxPlayers"] : values.maxPlayers}
               onChange={handleInputChange}
               name="maxPlayers"
               className="w-full rounded-lg p-2 bg-theme-purple-500 text-light"
@@ -111,7 +123,7 @@ const GameForm = () => {
         <div className="flex flex-col justify-start items-start w-full mb-4">
           <label htmlFor="imageUrl" className="text-light text-lg">Background Image URL</label>
           <input
-            value={values.imageUrl}
+            value={game ? game["imageUrl"] : values.imageUrl}
             onChange={handleInputChange}
             placeholder="Ex: https://cdn.media.amplience.net/i/wizardsprod/players-handbook-2024-cover-digital?w=1240&fmt=auto"
             name="imageUrl"
@@ -131,6 +143,7 @@ const GameForm = () => {
                 className="w-full rounded-lg p-2 bg-theme-purple-500 text-light"
                 required
                 type="datetime-local"
+                value={game ? new Date(game["startDate"]).toISOString().substring(0,19) : new Date().toUTCString()}
               />
             </div>
 
@@ -138,14 +151,18 @@ const GameForm = () => {
               <label htmlFor="timezone" className="text-light text-lg">Time Zone</label>
               <select name="timezone" className="w-full rounded-lg p-2 bg-theme-purple-500 text-light cursor-pointer">
                 {timezones.map((timezone) => (
-                  <option value={timezone['value']} className="">{timezone['label']}</option>
+                  <option value={timezone['value']} className="" defaultChecked={game && game["timezone"] == timezone}>{timezone['label']}</option>
                 ))}
               </select>
             </div>
 
             <div className="flex flex-col justify-start items-start w-1/4">
               <label htmlFor="schedule" className="text-light text-lg">Frequency</label>
-              <select name="schedule" className="w-full rounded-lg p-2 bg-theme-purple-500 text-light cursor-pointer">
+              <select
+              name="schedule"
+              className="w-full rounded-lg p-2 bg-theme-purple-500 text-light cursor-pointer"
+              defaultValue={game ? game["schedule"] : "WEEKLY"}
+              >
                 {Object.keys(schedules).map((schedule) => (
                   <option value={schedule} className="">{schedules[schedule]}</option>
                 ))}

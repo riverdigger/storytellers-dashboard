@@ -2,13 +2,13 @@ import React from "react";
 
 interface TagProps {
     playerCount?: number,
-    maxPlayerCount?: number,
+    maxPlayers?: number,
     isNew?: boolean,
     gameMaster?: string,
 }
 
-const AvailabilityTag: React.FC<TagProps> =  ({ playerCount, maxPlayerCount }) => {
-  if (playerCount && maxPlayerCount && (playerCount < maxPlayerCount)) {
+const AvailabilityTag: React.FC<TagProps> =  ({ playerCount, maxPlayers }) => {
+  if (playerCount! < maxPlayers!) {
     return (
       <span className="shadow-xl rounded-full border-2 font-bold bg-green-900 text-green-300 border-green-300 p-1 px-2 mr-1">
         OPEN

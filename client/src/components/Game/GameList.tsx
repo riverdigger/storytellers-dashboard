@@ -10,7 +10,6 @@ import "swiper/css/autoplay";
 // import required modules
 import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
-import EmptyCollection from "./EmptyCollection";
 import { faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
@@ -123,7 +122,7 @@ const GameList = () => {
                     title={game["title"]}
                     gameMaster={game["gmId"]}
                     playerCount={0}
-                    maxPlayerCount={game["maxPlayers"]}
+                    maxPlayers={game["maxPlayers"]}
                     isNew={(new Date().getTime() - new Date(game["createdAt"]).getTime()) <= (3 * 1000 * 86400) ? true : false}
                     schedule={game["schedule"]}
                     gameSystem={game["system"]}
@@ -168,7 +167,7 @@ const GameList = () => {
                     title={game["title"]}
                     gameMaster={game["gmId"]}
                     playerCount={0}
-                    maxPlayerCount={game["maxPlayers"]}
+                    maxPlayers={game["maxPlayers"]}
                     isNew={(new Date().getTime() - new Date(game["createdAt"]).getTime()) <= (3 * 1000 * 86400) ? true : false}
                     schedule={game["schedule"]}
                     gameSystem={game["system"]}

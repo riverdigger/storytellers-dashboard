@@ -12,7 +12,7 @@ export interface CardProps {
     title: string,
     isNew: boolean,
     playerCount: number,
-    maxPlayerCount: number,
+    maxPlayers: number,
     schedule: string,
     gameMaster: string,
     gameSystem: string,
@@ -23,8 +23,8 @@ const Card: React.FC<CardProps> = ({
   id,
   title,
   isNew,
-  playerCount,
-  maxPlayerCount,
+  playerCount = 0,
+  maxPlayers,
   schedule,
   gameMaster,
   gameSystem,
@@ -72,7 +72,7 @@ const Card: React.FC<CardProps> = ({
         </div>
         <div className="flex flex-row w-full justify-between">
           <div className="flex flex-row justify-start">
-            <AvailabilityTag playerCount={playerCount} maxPlayerCount={maxPlayerCount}></AvailabilityTag>
+            <AvailabilityTag playerCount={0} maxPlayers={maxPlayers}></AvailabilityTag>
           </div>
           <div className="flex flex-row justify-end">
             <div className="flex flex-row justify-center items-center whitespace-nowrap shadow-xl rounded-full border-2 font-bold bg-theme-purple-800 text-light border-light p-1 px-2 text-sm">
