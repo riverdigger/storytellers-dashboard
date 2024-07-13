@@ -61,7 +61,7 @@ router.put('/:id', async (req, res) => {
 
     if (gameId && game) {
       delete game.id;
-      console.log(`game: ${JSON.stringify(game)}`);
+      console.log(`PUT: ${JSON.stringify(game)}`);
       const rowsAffected = await database.update(gameId, game);
       res.status(200).json({ rowsAffected });
     } else {

@@ -26,7 +26,6 @@ const Game = () => {
       if (body["gameMaster"] === undefined || body["creator"] === "VeryLongFirstName EvenLongerLastName") {
         setOwner(true)  // TODO: Update to use signed in user
       }
-      console.log(body);
     }
     getGameBody();
   }, []);

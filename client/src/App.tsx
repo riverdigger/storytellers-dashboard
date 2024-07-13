@@ -20,6 +20,7 @@ function App() {
       />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<Home />} />
         <Route path="/profile" element={<Home />} />
         <Route path="/create" element={<GameCreate />} />

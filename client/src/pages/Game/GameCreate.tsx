@@ -1,5 +1,18 @@
 // import required modules
 import GameForm from "../../components/Game/GameForm";
+const initialValues = {
+  title: "",
+  description: "",
+  schedule: "WEEKLY",
+  system: "D&D 5e",
+  gameMaster: "",
+  imageUrl: "",
+  startDate: "",
+  timezone: "-8",
+  maxPlayers: 0,
+  hidden: true,
+  active: false,
+};
 
 const GameCreate = () => {
   return (

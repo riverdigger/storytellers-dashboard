@@ -4,6 +4,8 @@ import GameForm from "../../components/Game/GameForm";
 import { useParams } from "react-router-dom";
 
 const GameEdit = () => {
+  const { id } = useParams();
+
   return (
     <div>
         <div className="flex justify-center items-center w-full">
@@ -12,7 +14,7 @@ const GameEdit = () => {
           </h1>
         </div>
         <div className="w-full flex justify-center items-start mb-24">
-          <GameForm></GameForm>
+          <GameForm id={id}></GameForm>
         </div>
     </div>
   );

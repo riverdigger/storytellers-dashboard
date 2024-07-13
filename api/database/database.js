@@ -46,21 +46,21 @@ class Database {
     await this.connect();
     const request = this.poolconnection.request();
 
-          // id int NOT NULL IDENTITY,
-          // title varchar(255),
-          // description varchar(255),
-          // active bit,
-          // hidden bit,
-          // system varchar(255),
-          // gmId int,
-          // imageUrl varchar(255),
-          // maxPlayers int,
-          // schedule varchar(255),
-          // timezone datetimeoffset,
-          // startDate datetime,
-          // nextDate datetime,
-          // createdAt datetime,
-          // updatedAt datetime,
+    // id int NOT NULL IDENTITY,
+    // title varchar(255),
+    // description varchar(255),
+    // active bit,
+    // hidden bit,
+    // system varchar(255),
+    // gmId int,
+    // imageUrl varchar(255),
+    // maxPlayers int,
+    // schedule varchar(255),
+    // timezone datetimeoffset,
+    // startDate datetime,
+    // nextDate datetime,
+    // createdAt datetime,
+    // updatedAt datetime,
     request.input("title", sql.NVarChar(255), data.title);
     request.input("description", sql.Text, data.description);
     request.input("active", sql.Bit, data.active);
@@ -128,12 +128,36 @@ class Database {
 
     const request = this.poolconnection.request();
 
+    // id int NOT NULL IDENTITY,
+    // title varchar(255),
+    // description varchar(255),
+    // active bit,
+    // hidden bit,
+    // system varchar(255),
+    // gmId int,
+    // imageUrl varchar(255),
+    // maxPlayers int,
+    // schedule varchar(255),
+    // timezone datetimeoffset,
+    // startDate datetime,
+    // nextDate datetime,
+    // createdAt datetime,
+    // updatedAt datetime,
     request.input("id", sql.Int, +id);
     request.input("title", sql.NVarChar(255), data.title);
-    request.input("description", sql.NVarChar(255), data.description);
+    request.input("description", sql.Text, data.description);
+    request.input("active", sql.Bit, data.active);
+    request.input("hidden", sql.Bit, data.hidden);
+    request.input("system", sql.NVarChar(255), data.system);
+    request.input("imageUrl", sql.NVarChar(255), data.imageUrl);
+    request.input("maxPlayers", sql.BigInt, data.maxPlayers);
+    request.input("schedule", sql.NVarChar(255), data.schedule);
+    request.input("timezone", sql.DateTimeOffset, data.timezone);
+    request.input("startDate", sql.DateTime, data.startDate);
+    request.input("updatedAt", sql.DateTime, new Date());
 
     const result = await request.query(
-      `UPDATE Game SET title=@title, description=@description WHERE id = @id`
+      `UPDATE Game SET title=@title, description=@description, active=@active, hidden=@hidden, system=@system, imageUrl=@imageUrl, maxPlayers=@maxPlayers, schedule=@schedule, timezone=@timezone, startDate=@startDate, updatedAt=@updatedAt WHERE id = @id`
     );
 
     return result.rowsAffected[0];
