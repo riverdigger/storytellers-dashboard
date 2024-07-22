@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Card } from "./Card";
+import { Card, CardLoading } from "./Card";
 
 // Import Swiper styles
 import "swiper/css";
@@ -42,7 +42,7 @@ const GameList = () => {
     return (
       <div className="flex justify-center items-center my-4 w-full">
         <div 
-          className="border-1 rounded bg-green-500 hover:bg-green-600 text-gray-900 cursor-pointer text-lg p-2 px-3 mr-4"
+          className="flex justify-center items-center border-1 rounded bg-green-500 hover:bg-green-600 text-gray-900 cursor-pointer text-lg p-1 px-3 mr-4"
           onClick={e => navigate(`/create`)}
         >
           <FontAwesomeIcon icon={faPlus} className="mr-1"></FontAwesomeIcon>Create
@@ -80,23 +80,13 @@ const GameList = () => {
   }, []);
 
   if (games.length === 0) {
-    const tempGames = [{
-      id: 1,
-      title: "Test Game",
-      gmId: "Test GM",
-      maxPlayers: 6,
-      schedule: "Test Schedule",
-      system: "Test System",
-      imageUrl: "https://via.placeholder.com/400x600",
-      createdAt: new Date(),
-    }];
     return (
       <div className="flex flex-col justify-center items-center w-full">
         <FilterBar></FilterBar>
         <Swiper
             effect={"coverflow"}
             grabCursor={true}
-            loop={games.length < 5 ? false : true}
+            loop={true}
             centeredSlides={true}
             slidesPerView={5}
             autoplay={{
@@ -115,21 +105,24 @@ const GameList = () => {
             modules={[EffectCoverflow, Pagination, Autoplay]}
             className="bg-transparent w-full"
           >
-            {tempGames.map(game => (
-                <SwiperSlide>
-                    <Card
-                    id={game["id"]}
-                    title={game["title"]}
-                    gameMaster={game["gmId"]}
-                    playerCount={0}
-                    maxPlayers={game["maxPlayers"]}
-                    isNew={(new Date().getTime() - new Date(game["createdAt"]).getTime()) <= (3 * 1000 * 86400) ? true : false}
-                    schedule={game["schedule"]}
-                    gameSystem={game["system"]}
-                    imageUrl={game["imageUrl"]}
-                    ></Card>
-                </SwiperSlide>
-          ))}
+            <SwiperSlide>
+                <CardLoading></CardLoading>
+            </SwiperSlide>
+            <SwiperSlide>
+                <CardLoading></CardLoading>
+            </SwiperSlide>
+            <SwiperSlide>
+                <CardLoading></CardLoading>
+            </SwiperSlide>
+            <SwiperSlide>
+                <CardLoading></CardLoading>
+            </SwiperSlide>
+            <SwiperSlide>
+                <CardLoading></CardLoading>
+            </SwiperSlide>
+            <SwiperSlide>
+                <CardLoading></CardLoading>
+            </SwiperSlide>
           </Swiper>
         {/* <EmptyCollection></EmptyCollection> */}
       </div>

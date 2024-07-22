@@ -4,9 +4,9 @@ const Home = () => {
 
     return (
         <div>
-            <div className="flex justify-center items-center w-full">
-              <h1 className="text-4xl font-bold text-center text-light pt-4">
-                  Active Games
+            <div className="flex justify-center items-center w-full pt-4">
+              <h1 className="ribbon">
+                <strong className="ribbon-content text-4xl font-bold text-center text-light pt-4">Active Games</strong>
               </h1>
             </div>
             <GameList></GameList>

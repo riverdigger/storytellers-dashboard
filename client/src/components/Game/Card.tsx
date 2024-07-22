@@ -4,7 +4,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import { AvailabilityTag, GMNeededTag, NewTag } from "../Tag/Tags";
+import { AvailabilityTag, GMNeededTag, LoadingTag, NewTag } from "../Tag/Tags";
 import { useNavigate } from "react-router-dom";
 
 export interface CardProps {
@@ -30,12 +30,6 @@ const Card: React.FC<CardProps> = ({
   gameSystem,
   imageUrl,
 }) => {
-  async function getGameBody() {
-    const response = await fetch(`/games/${id}`);
-    const body = await response.json();
-    console.log(body);
-  }
-
   const navigate = useNavigate();
 
   return (
@@ -93,5 +87,49 @@ const Card: React.FC<CardProps> = ({
   );
 };
 
-export { Card };
+const CardLoading: React.FC = () => {
+
+  return (
+    <div
+      className="rounded-xl flex flex-col justify-between text-light cursor-pointer"
+      style={{
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "400px",
+        height: "600px",
+        boxShadow: "inset 0 0 80px rgba(0, 0, 0, 0.5)", // Add vignette effect
+        // WebkitBoxReflect:
+        // "below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.1))",
+      }}
+    >
+      <div className="flex flex-row w-full justify-center p-4">
+        <div className="flex flex-row justify-center">
+        </div>
+      </div>
+      <div
+        className="bg-gray-900 bg-opacity-60 p-4 pt- overflow-hidden rounded-b-xl flex flex-col backdrop-blur-sm"
+        style={{
+          background:
+            "linear-gradient(0deg, rgba(17,24,39,0.7) 70%, rgba(0,0,0,0) 100%)",
+        }}
+      >
+        <h2 className="rounded-md bg-theme-purple-500 animate-pulse h-12"></h2>
+        <span className="rounded-md bg-theme-purple-500 animate-pulse h-8 mt-1 mb-4 w-1/2"></span>
+        <div className="flex flex-row w-full justify-between">
+          <div className="flex flex-row justify-start">
+            <LoadingTag></LoadingTag>
+          </div>
+          <div className="flex flex-row justify-end">
+            <LoadingTag></LoadingTag>
+            <LoadingTag></LoadingTag>
+            <LoadingTag></LoadingTag>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { Card, CardLoading };
 

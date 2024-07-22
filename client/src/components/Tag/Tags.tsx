@@ -7,6 +7,12 @@ interface TagProps {
     gameMaster?: string,
 }
 
+const LoadingTag: React.FC<TagProps> = () => {
+  return (
+    <span className="shadow-xl rounded-full bg-theme-purple-500 h-8 w-16 mr-1 animate-pulse"></span>
+  );
+}
+
 const AvailabilityTag: React.FC<TagProps> =  ({ playerCount, maxPlayers }) => {
   if (playerCount! < maxPlayers!) {
     return (
@@ -61,4 +67,4 @@ const PlayerTag: React.FC<TagProps> = () => {
   );
 };
 
-export { AvailabilityTag, GMNeededTag, NewTag, GMTag, PlayerTag};
+export { AvailabilityTag, GMNeededTag, NewTag, GMTag, PlayerTag, LoadingTag };
