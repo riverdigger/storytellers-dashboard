@@ -42,13 +42,13 @@ const GameList = () => {
     return (
       <div className="flex justify-center items-center my-4 w-full">
         <div 
-          className="flex justify-center items-center border-1 rounded bg-green-500 hover:bg-green-600 text-gray-900 cursor-pointer text-lg p-1 px-3 mr-4"
+          className="flex justify-center items-center border-1 rounded-full bg-green-500 hover:bg-green-600 font-bold text-green-900 cursor-pointer text-md p-1 px-3 mr-4"
           onClick={e => navigate(`/create`)}
         >
-          <FontAwesomeIcon icon={faPlus} className="mr-1"></FontAwesomeIcon>Create
+          <FontAwesomeIcon icon={faPlus} className="mr-1"></FontAwesomeIcon>CREATE
         </div>
         <form onSubmit={e => e.preventDefault()} className="w-96 my-4">
-          <div className="bg-theme-purple-500 h-8 rounded-full flex flex-row justify-start items-center py-4 px-2">
+          <div className="bg-theme-purple-500 h-8 rounded-full flex flex-row justify-start items-center py-4 px-1">
             <button onClick={submitForm} type="submit" className="bg-theme-purple-500 rounded-full h-8 w-8 flex justify-center items-center">
               <FontAwesomeIcon icon={faSearch} className="text-light" />
             </button>
@@ -86,14 +86,9 @@ const GameList = () => {
         <Swiper
             effect={"coverflow"}
             grabCursor={true}
-            loop={true}
+            loop={false}
             centeredSlides={true}
             slidesPerView={5}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
             coverflowEffect={{
               rotate: 10,
               stretch: 0,
@@ -135,7 +130,7 @@ const GameList = () => {
             effect={"coverflow"}
             grabCursor={true}
             loop={games.length < 5 ? false : true}
-            centeredSlides={true}
+            centeredSlides={false}
             slidesPerView={5}
             autoplay={{
               delay: 5000,

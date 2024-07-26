@@ -4,4 +4,5 @@ export const systems: { [key: string]: string } = {
     "Call of Cthulhu": "Call of Cthulhu",
     "Blades in the Dark": "Blades in the Dark",
     "Alien RPG": "Alien RPG",
+    "Blade Runner": "Blade Runner RPG"
   };

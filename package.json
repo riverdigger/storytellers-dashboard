@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "@fluentui/react": "^8.118.8",
+    "@fluentui/react-components": "^9.54.6",
     "express": "^4.19.2",
     "react-router-dom": "^6.23.1",
     "yarn": "^1.22.22"

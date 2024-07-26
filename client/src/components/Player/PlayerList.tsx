@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { PlayerCard } from "./PlayerCard";
 import { EmptyPlayerCard } from "./EmptyPlayerCard";
@@ -51,4 +51,14 @@ const PlayerList: React.FC<PlayerListProps> = ({
     );
 }
 
-export { PlayerList };
+const PlayerListLoading: React.FC = () => {
+    return (
+        <div className="w-full flex flex-col justify-start items-start mt-16">
+            <h2 className="rounded-md bg-theme-purple-500 animate-pulse h-8 w-36 mb-1"></h2>
+            <div className="rounded-md bg-theme-purple-500 animate-pulse h-36 w-full">
+            </div>
+        </div>
+    );
+}
+
+export { PlayerList, PlayerListLoading };

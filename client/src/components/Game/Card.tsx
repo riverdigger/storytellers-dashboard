@@ -31,6 +31,7 @@ const Card: React.FC<CardProps> = ({
   imageUrl,
 }) => {
   const navigate = useNavigate();
+  const upperSchedule = schedule.toUpperCase();
 
   return (
     <div
@@ -75,7 +76,7 @@ const Card: React.FC<CardProps> = ({
             </div>
             <div className="flex flex-row justify-center items-center whitespace-nowrap shadow-xl rounded-full border-2 font-bold bg-theme-purple-800 text-light border-light p-1 px-2 ml-1 text-sm">
               <FontAwesomeIcon icon={faCalendar} className="pr-2 pl-1" />
-              {schedule}
+              {upperSchedule}
             </div>
             <div className="flex flex-row justify-center items-center whitespace-nowrap shadow-xl rounded-full border-2 font-bold bg-theme-purple-800 text-light border-light p-1 px-2 ml-1 text-sm">
               {gameSystem}
@@ -93,7 +94,7 @@ const CardLoading: React.FC = () => {
     <div
       className="rounded-xl flex flex-col justify-between text-light cursor-pointer"
       style={{
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        backgroundColor: "rgba(25, 0, 55, 1)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "400px",
