@@ -4,16 +4,11 @@ import { Link, useFetcher, useNavigate, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendarAlt,
-  faDiceD20,
-  faDiceD6,
-  faPenFancy,
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { systems } from "../../common/systems";
 import { schedules } from "../../common/schedules";
-import { timezones } from "../../common/timezones";
 import { FieldValues, useForm } from "react-hook-form";
-import { faDAndD } from "@fortawesome/free-brands-svg-icons";
 
 interface GameFormProps {
   id?: string,
@@ -22,6 +17,9 @@ interface GameFormProps {
 const GameForm: React.FC<GameFormProps> = ({id}) => {
   const navigate = useNavigate();
   const [game, setGame] = useState(null);
+  const todaysDate = new Date()
+  const offset = todaysDate.getTimezoneOffset();
+  const defaultDate = new Date(todaysDate.getTime() - offset * 60 * 1000).toISOString().substring(0,19);
 
   const {
     register,
@@ -52,11 +50,12 @@ const GameForm: React.FC<GameFormProps> = ({id}) => {
         imageUrl: game["imageUrl"],
         maxPlayers: game["maxPlayers"],
         schedule: game["schedule"],
-        startDate: game["startDate"],
+        startDate: new Date(new Date(game["startDate"]).getTime() - offset * 60 * 1000).toISOString().substring(0,19),
       });
     } else {
       reset({
-        hidden: true
+        hidden: true,
+        startDate: defaultDate,
       })
     }
   }, [game]);
@@ -111,7 +110,7 @@ const GameForm: React.FC<GameFormProps> = ({id}) => {
           { !contentLoading &&
             <textarea
               {...register("description", { required: "This field is required"})}
-              placeholder="Tell us all about your game! Give descriptions about the setting, playstyle, and overall hook of your game."
+              placeholder="Tell us all about your game! Give descriptions about the setting, playstyle, and overall hook to get new players excited about joining."
               className="w-full rounded-lg p-2 bg-theme-purple-500 text-light"
               rows={6}
             />
@@ -182,6 +181,7 @@ const GameForm: React.FC<GameFormProps> = ({id}) => {
                   {...register("startDate", { required: "This field is required"})}
                   className="w-full rounded-lg p-2 bg-theme-purple-500 text-light"
                   type="datetime-local"
+                  step="1"
                 />
               }
               {
