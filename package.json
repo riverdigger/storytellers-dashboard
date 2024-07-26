@@ -16,6 +16,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@azure/msal-browser": "^3.20.0",
+    "@azure/msal-react": "^2.0.22",
     "@fluentui/react": "^8.118.8",
     "@fluentui/react-components": "^9.54.6",
     "express": "^4.19.2",
